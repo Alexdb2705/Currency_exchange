@@ -3,47 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="currency.css">
+        <script src="currency.js"></script>
         <title>Currency Exchange</title>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-
-                document.querySelector('form').onsubmit = function() {
-
-                    fetch('https://api.exchangeratesapi.io/v1/latest?access_key=0d7ba8c184073c8e35186cd3ae21b052')
-                    .then(response => response.json())
-                    .then(data => {
-                        const currencyFrom = document.querySelector('#currencyFrom').value.toUpperCase();
-                        const currencyTo = document.querySelector('#currencyTo').value.toUpperCase();
-                        const money = document.querySelector('#money').value;
-                        if (currencyFrom in data.rates & currencyTo in data.rates) {
-                            const rateInter = data.rates[currencyFrom];
-                            const rateTo = data.rates[currencyTo];
-                            document.querySelector('#result').innerHTML = `${money} ${currencyFrom} is equal to ${(rateTo*money/rateInter).toFixed(3)} ${currencyTo}.`;
-                        } else {
-                            document.querySelector('#result').innerHTML = 'Invalid currencyFrom.';
-                        }
-                    })
-                    .catch(error => {
-                        console.log('Error: ', error)
-                    });
-
-                    return false;
-                }
-
-
-            });
-
-        </script>
     </head>
     <body>
+        <h1 class="pageTitle">Currency Exchange</h1>
         <form>
-            <input id="money" placeholder="Amount" type="number">
-            <input id="currencyFrom" placeholder="From" type="text">
-            <input id="currencyTo" placeholder="To" type="text">
-            <input type="submit" value="Convert">
+            <input class="inputs" id="money" placeholder="Amount" type="text" autofocus>
+            <input class="inputs" id="currencyFrom" placeholder="From" type="text">
+            <input class="inputs" id="currencyTo" placeholder="To" type="text">
+            <input class="submit-btn" type="submit" value="Convert">
         </form>
-        <div id="result">
-
-        </div>
+        <div id="result"></div>
     </body>
 </html>

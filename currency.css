@@ -1,0 +1,81 @@
+* {
+    margin: 7px;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.4s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes changingSizes {
+    0% {
+        font-size: 65px;
+        color: rgb(36, 211, 217);
+    }
+
+    100% {
+        font-size: 75px;
+        color: rgb(11, 128, 128);
+    }
+}
+
+.pageTitle {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 30px;
+    animation: changingSizes 1000ms infinite alternate-reverse;
+    width: auto;
+    height: 10%;
+}
+
+input, #result {
+    display: block;
+    min-height: 40px;
+    padding: 6px;
+    font-size: 20px;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.inputs:hover {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.inputs:focus {
+    padding: 20px;
+}
+
+.submit-btn {
+    align-self: center;
+    width: auto;
+    background-color: rgba(127, 255, 212, 0.8);
+    cursor: pointer;
+}
+
+.submit-btn:hover, .submit-btn:focus {
+    font-size: 25px;
+    padding: 15px;
+    transform: translateY(10%);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 25%;    
+}
+
