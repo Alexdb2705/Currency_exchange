@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelector('form').onsubmit = function () {
 
-        fetch('https://api.exchangeratesapi.io/v1/latest?access_key=0d7ba8c184073c8e35186cd3ae21b052')
+        fetch('https://api.exchangeratesapi.io/v1/latest?access_key=7985054f8086355dbeb7d97a35af2cef')
             .then(response => response.json())
             .then(data => {
                 const currencyFrom = document.querySelector('#currencyFrom').value.toUpperCase();
