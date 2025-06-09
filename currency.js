@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 const currencyFrom = document.querySelector('#currencyFrom').value.toUpperCase();
-                const currencyTo = document.querySelector('#currencyTo').value.toUpperCase();
+                const currencyTo = document.querySelector('#currencyTo').value.toUpperCase() ;
                 const money = document.querySelector('#money').value;
                 if (!money) {
                     alert('Please insert the amount of money to change.');
